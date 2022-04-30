@@ -46,19 +46,22 @@ class Monster:
             print("arghhh..")
             self.attack(attacker)
 
-
-m1 = Monster("Orange", 190, "Spider", 30)
-print(f"This {m1.get_type()} hair color is {m1.get_hair_color()} and is {m1.get_age()} years old.")
-print(f"Hp of this monster is {m1.get_hp}")
-m2 = Monster("Blue", 213, "Slime", 30)
-print(f"This {m2.get_type()} hair color is {m2.get_hair_color()} and is {m2.get_age()} years old.")
-print(f"Hp of this monster is {m2.get_hp}")
-m1.attack(m2)
+def monsetup():
+    m1 = Monster("Orange", 190, "Spider", 30)
+    print(f"This {m1.get_type()} hair color is {m1.get_hair_color()} and is {m1.get_age()} years old.")
+    print(f"Hp of this monster is {m1.get_hp}")
+    m2 = Monster("Blue", 213, "Slime", 30)
+    print(f"This {m2.get_type()} hair color is {m2.get_hair_color()} and is {m2.get_age()} years old.")
+    print(f"Hp of this monster is {m2.get_hp}")
+    m1.attack(m2)
 
 while True:
+    monsetup()
     choice = input("Do you want to play the game again? (y/n)")
     if choice.lower() == 'n':
         break
     if choice.lower() != 'y':
         print("Not(y/n)")
         quit()
+    if choice.lower() == 'y':
+        monsetup()
